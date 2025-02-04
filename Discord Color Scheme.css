@@ -1,0 +1,11 @@
+/* colors */
+:root {
+	--spice-sidebar: #1e1f22;
+	--spice-rgb-sidebar: 30, 31, 34;
+	--spice-player: #242629;
+	--spice-rgb-player: 36, 38, 41;
+	--spice-main: #2b2d31;
+	--spice-highlight-elevated: #2b2d31;
+	--spice-highlight-base: #2b2d31;
+	--spice-rgb-main: 43, 45, 49;
+}

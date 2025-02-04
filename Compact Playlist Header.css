@@ -1,0 +1,66 @@
+.main-entityHeader-imageContainer {
+	height: clamp(
+		64px,
+		64px + (100vw - var(--left-sidebar-width, 0) * 1px - var(--right-sidebar-width, 0) * 1px - 600px) / 424 * 104,
+		232px
+	);
+	width: clamp(
+		64px,
+		64px + (100vw - var(--left-sidebar-width, 0) * 1px - var(--right-sidebar-width, 0) * 1px - 600px) / 424 * 104,
+		232px
+	);
+}
+.main-entityHeader-container {
+	min-height: unset !important;
+	height: calc((48px + var(--panel-gap) * 2) + 64px + var(--content-spacing) * 2) !important;
+
+	> .contentSpacing {
+		height: 64px;
+		align-self: end;
+
+		> .main-entityHeader-headerText {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: 1fr 1fr 1fr;
+			grid-template-areas:
+				"title pretitle"
+				"description description"
+				"metadata metadata";
+
+			/* Playlist Name */
+			> .main-entityHeader-title {
+				grid-area: title;
+				> h1 {
+					font-size: 1.25rem !important;
+				}
+			}
+			/* Playlist Pretitle (eg: "Public Playlist") */
+			.main-entityHeader-pretitle {
+				grid-area: pretitle;
+			}
+			/* Playlist Description */
+			span.encore-text:not(.main-entityHeader-pretitle) {
+				grid-area: description;
+			}
+			/* Playlist Metadata (eg: Author, Total Duration etc) */
+			> div {
+				margin-top: 0;
+				grid-area: metadata;
+
+				.main-entityHeader-metaDataText {
+					display: flex;
+				}
+
+				/* Spotify Logo */
+				> .main-entityHeader-creatorWrapper > svg,
+        /* Playlist Author */
+        > figure > div {
+					width: 1.25rem !important;
+					height: 1.25rem !important;
+					display: flex;
+					align-items: center;
+				}
+			}
+		}
+	}
+}

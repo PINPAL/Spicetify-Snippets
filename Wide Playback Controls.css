@@ -1,0 +1,115 @@
+.main-nowPlayingBar-container {
+	align-items: center;
+
+	> .main-nowPlayingBar-nowPlayingBar {
+		height: fit-content;
+		width: calc(100% - 2 * var(--panel-gap));
+		margin-bottom: var(--panel-gap);
+		display: grid;
+		grid-template-rows:
+			[controls] 56px
+			[seekBar] 32px
+			[volume] 32px;
+		grid-template-columns:
+			[coverArt] 56px
+			[details] calc(7 * 32px - 56px)
+			[mainBtns_paddingLeft] 1fr
+			[mainBtns] auto
+			[mainBtns_paddingRight] 1fr
+			[all_6_OtherBtns] repeat(7, 32px);
+		grid-template-areas:
+			"coverArt details padLeft mainBtns padRght likeBtn miniPlayBtn nowPlayBtn lyricsBtn queueBtn castBtn fullScrBtn"
+			"seekBar  seekBar seekBar seekBar  seekBar seekBar seekBar     seekBar    seekBar   seekBar  seekBar seekBar"
+			"volume   volume  volume  volume   volume  volume  volume      volume     volume    volume   volume  volume";
+
+		/* Current Song Details */
+		.main-nowPlayingBar-left {
+			display: contents;
+
+			> .main-nowPlayingWidget-nowPlaying {
+				display: contents;
+
+				/* Cover Art */
+				> .main-coverSlotCollapsed-container {
+					grid-area: coverArt;
+					height: 56px;
+					margin: 0 !important;
+				}
+				/* Song Name & Artist */
+				> .main-nowPlayingWidget-trackInfo {
+					grid-area: details;
+				}
+				/* Add to Liked Songs Button
+                OR Add to Playlist Button */
+				> button {
+					grid-area: likeBtn;
+				}
+			}
+		}
+		/* Pause/Back/Skip & Seek Bar */
+		.main-nowPlayingBar-center {
+			display: contents;
+
+			> .player-controls {
+				display: contents;
+
+				/* Shuffle/Back/Pause/Skip/Loop Buttons */
+				> .player-controls__buttons {
+					grid-area: mainBtns;
+					/* padding-left: calc(4 * var(--panel-gap));
+					padding-right: calc(4 * var(--panel-gap)); */
+					margin-bottom: 0;
+					display: flex;
+					justify-content: center;
+
+					/* Shuffle/Back Buttons */
+					.player-controls__left,
+                    /* Skip/Loop Buttons */
+					.player-controls__right {
+						flex: unset;
+					}
+				}
+
+				/* Seek Bar */
+				> .playback-bar {
+					grid-area: seekBar;
+
+					/* Time Elapsed & Time Remaining */
+					> .encore-text {
+						min-width: 2rem;
+					}
+				}
+			}
+		}
+		/* Lyrics/Queue/Cast & Volume Bar */
+		.main-nowPlayingBar-right {
+			display: contents;
+
+			> .main-nowPlayingBar-extraControls {
+				display: contents;
+
+				> button[aria-label="Open Miniplayer"] {
+					grid-area: miniPlayBtn;
+				}
+				> button[aria-label="Now playing view"] {
+					grid-area: nowPlayBtn;
+				}
+				> button[aria-label="Lyrics"] {
+					grid-area: lyricsBtn;
+				}
+				> div:has(button[aria-label="Queue"]) {
+					grid-area: queueBtn;
+				}
+				> div:has(button[aria-label="Connect to a device"]) {
+					grid-area: castBtn;
+				}
+				> .volume-bar {
+					grid-area: volume;
+				}
+				> button[aria-label="Full screen"] {
+					grid-area: fullScrBtn;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,23 @@
+/* Hide Right Sidebar Panel */
+.Root__top-container:has(> .Root__right-sidebar > div > aside[aria-label="Now playing view"]) {
+	/* Fix main container width due to CSS grid adding gap for hidden final panel*/
+	.Root__main-view {
+		width: calc(100% + var(--panel-gap));
+	}
+	/* Hide right sidebar */
+	.Root__right-sidebar {
+		display: none;
+	}
+}
+
+/* Hide Button */
+.main-nowPlayingBar-extraControls > button[aria-label="Now playing view"] {
+	display: none;
+}
+/* Adjust for widePlaybackControls Snippet */
+.main-nowPlayingBar-nowPlayingBar {
+	grid-template-areas:
+		"coverArt details padLeft mainBtns padRght nowPlayBtn likeBtn miniPlayBtn lyricsBtn queueBtn castBtn fullScrBtn"
+		"seekBar  seekBar seekBar seekBar  seekBar seekBar    seekBar seekBar     seekBar   seekBar  seekBar seekBar"
+		"volume   volume  volume  volume   volume  volume     volume  volume      volume    volume   volume  volume" !important;
+}

@@ -1,0 +1,62 @@
+.main-nowPlayingBar-nowPlayingBar {
+	flex-direction: column;
+	height: fit-content;
+	padding-top: 0.75rem;
+	padding-bottom: 0.5rem;
+}
+
+.main-nowPlayingWidget-nowPlaying {
+	justify-content: center;
+}
+
+.main-nowPlayingBar-nowPlayingBar > div {
+	width: calc(100vw - 16px);
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 0;
+}
+.main-nowPlayingBar-left,
+.main-nowPlayingBar-right,
+.player-controls__buttons {
+	padding-left: 12px !important;
+	padding-right: 12px !important;
+}
+
+.main-nowPlayingBar-left {
+	margin-bottom: 8px !important;
+}
+.main-nowPlayingBar-left .main-nowPlayingWidget-nowPlaying {
+	display: grid;
+	grid-template-columns: auto 1fr auto auto;
+}
+
+.player-controls__buttons {
+	justify-content: space-between;
+	margin-bottom: 16px;
+}
+.playback-bar {
+	margin-bottom: 16px;
+}
+
+.player-controls__buttons > div {
+	justify-content: space-between;
+}
+.player-controls__buttons .player-controls__left::after {
+	content: "";
+}
+.player-controls__buttons .player-controls__right::before {
+	content: "";
+}
+
+.main-nowPlayingBar-extraControls .main-nowPlayingBar-volumeBar {
+	width: 100%;
+	flex: unset;
+}
+
+.main-leaderboardComponent-container {
+	height: unset !important;
+}
+
+._Cq69xKZBtHaaeMZXIdk {
+	height: unset !important;
+}
