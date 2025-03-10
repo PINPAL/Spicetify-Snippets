@@ -88,16 +88,20 @@
 			> .main-nowPlayingBar-extraControls {
 				display: contents;
 
-				> button[aria-label="Open Miniplayer"] {
+				> button[aria-label="Open Miniplayer"],
+				> button[data-testid="pip-toggle-button"] {
 					grid-area: miniPlayBtn;
 				}
-				> button[aria-label="Now playing view"] {
+				> button[aria-label="Now playing view"],
+				> button[data-testid="control-button-npv"] {
 					grid-area: nowPlayBtn;
 				}
-				> button[aria-label="Lyrics"] {
+				> button[aria-label="Lyrics"],
+				> button[data-testid="lyrics-button"] {
 					grid-area: lyricsBtn;
 				}
-				> div:has(button[aria-label="Queue"]) {
+				> div:has(button[aria-label="Queue"]),
+				> div:has(button[data-testid="control-button-queue"]) {
 					grid-area: queueBtn;
 				}
 				> div:has(button[aria-label="Connect to a device"]) {
@@ -106,7 +110,8 @@
 				> .volume-bar {
 					grid-area: volume;
 				}
-				> button[aria-label="Full screen"] {
+				> button[aria-label="Full screen"],
+				> button[data-testid="fullscreen-mode-button"] {
 					grid-area: fullScrBtn;
 				}
 			}
