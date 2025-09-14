@@ -39,10 +39,12 @@
 				> .main-nowPlayingWidget-trackInfo {
 					grid-area: details;
 				}
-				/* Add to Liked Songs Button
-                OR Add to Playlist Button */
-				> button {
-					grid-area: likeBtn;
+				/* "Add to Liked Songs" OR "Add to Playlist Button" Button */
+				> .main-nowPlayingWidget-trackInfo + div:has(> button) {
+					display: contents;
+					> button {
+						grid-area: likeBtn;
+					}
 				}
 			}
 		}
@@ -56,15 +58,13 @@
 				/* Shuffle/Back/Pause/Skip/Loop Buttons */
 				> .player-controls__buttons {
 					grid-area: mainBtns;
-					/* padding-left: calc(4 * var(--panel-gap));
-					padding-right: calc(4 * var(--panel-gap)); */
 					margin-bottom: 0;
 					display: flex;
 					justify-content: center;
 
 					/* Shuffle/Back Buttons */
 					.player-controls__left,
-                    /* Skip/Loop Buttons */
+          /* Skip/Loop Buttons */
 					.player-controls__right {
 						flex: unset;
 					}
