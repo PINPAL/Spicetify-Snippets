@@ -1,11 +1,85 @@
-/* colors */
 :root {
-	--spice-sidebar: #1e1f22;
-	--spice-rgb-sidebar: 30, 31, 34;
-	--spice-player: #242629;
-	--spice-rgb-player: 36, 38, 41;
-	--spice-main: #2b2d31;
+	/* ==============================================
+  Spicetify Base Variables
+  ============================================== */
+	/* Main Background */
+	--spice-sidebar: #2c2d32;
+	--spice-rgb-sidebar: 44, 45, 50;
+	/* Panels */
+	--spice-main: #323339;
+	--spice-rgb-main: 50, 51, 57;
+	/* Playback Control Bars */
+	--spice-player: #36373e;
+	--spice-rgb-player: 54, 55, 62;
+	/* Hovered Items in Panels */
 	--spice-highlight-elevated: #2b2d31;
 	--spice-highlight-base: #2b2d31;
-	--spice-rgb-main: 43, 45, 49;
+
+	/* ==============================================
+  From Discord 
+  ============================================== */
+	--radius-sm: 8px;
+
+	--neutral-6: hsl(240 calc(1 * 5.263%) 92.549% /1);
+	--neutral-66: hsl(232.5 calc(1 * 6.897%) 22.745% /1);
+	--neutral-69: hsl(231.429 calc(1 * 6.542%) 20.98% /1);
+	--neutral-73: hsl(230 calc(1 * 6.383%) 18.431% /1);
+
+	--border-faint: color-mix(
+		in oklab,
+		hsl(240 calc(1 * 4%) 60.784% /0.0392156862745098) 100%,
+		hsl(var(--custom-theme-base-color-hsl, 0 0% 0%) / 0.0392156862745098)
+			var(--custom-theme-border-color-amount, var(--custom-theme-base-color-amount, 0%))
+	);
+
+	--button-secondary-text: var(--neutral-6);
+
+	--button-secondary-background: hsl(240 calc(1 * 4%) 60.784% /0.12156862745098039);
+
+	--background-base-lowest: color-mix(
+		in oklab,
+		var(--neutral-73) 100%,
+		var(--custom-theme-base-color, #000) var(--custom-theme-base-color-amount, 0%)
+	);
+	--background-base-low: color-mix(
+		in oklab,
+		var(--neutral-66) 100%,
+		var(--custom-theme-base-color, #000) var(--custom-theme-base-color-amount, 0%)
+	);
+	--background-base-lower: color-mix(
+		in oklab,
+		var(--neutral-69) 100%,
+		var(--custom-theme-base-color, #000) var(--custom-theme-base-color-amount, 0%)
+	);
 }
+
+/* Main Background */
+body,
+.Root__globalNav,
+.Root__top-container {
+	background: var(--background-base-lowest) !important;
+}
+
+/* Main View */
+.Root__main-view {
+	background: var(--background-gradient-chat, var(--background-base-lower)) !important;
+}
+
+/* Library Sidebar */
+.Root__nav-bar,
+.main-yourLibraryX-entryPoints,
+.main-yourLibraryX-libraryContainer {
+	background: none !important;
+
+	.x-entityImage-imageContainer {
+		box-shadow: none !important;
+	}
+}
+
+/* Now Playing Bar */
+/* .Root__now-playing-bar {
+	background: var(--background-gradient-highest, var(--background-base-low)) !important;
+	border: 1px solid var(--border-faint) !important;
+	border-radius: var(--radius-sm) !important;
+	padding: 8px 0 0 0 !important;
+} */
